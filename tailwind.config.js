@@ -25,6 +25,7 @@ export default {
       },
       fontFamily: {
         clash: ['Clash Display', 'sans-serif'],
+        bebas: ['Bebas Neue', 'cursive'],
       },
       boxShadow: {
         shadow: '0px 0px 0px 0px rgba(0, 0, 0, 0.0)',
