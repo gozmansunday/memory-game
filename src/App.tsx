@@ -1,7 +1,7 @@
 const App = () => {
   return (
     <>
-      <div className="font-clash text-center text-3xl">
+      <div className="font-bebas text-center text-3xl">
         Memory Game
       </div>
     </>
