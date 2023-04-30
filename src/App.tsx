@@ -6,7 +6,7 @@ const App = () => {
       {/* Wallpaper and Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat h-screen"
-        style={{ backgroundImage: `url('../src/assets/images/backgrounds/bg-img-${bgInteger}.jpeg')` }}
+        style={{ backgroundImage: `url('/src/assets/images/backgrounds/bg-img-${bgInteger}.jpeg')` }}
       ></div>
       <div className="absolute inset-0 bg-black/50 h-screen"></div>
 
