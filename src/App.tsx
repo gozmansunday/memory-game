@@ -1,14 +1,12 @@
 const App = () => {
-  const bgInteger = Math.floor(Math.random() * 3) + 1;
-
   return (  
     <div className="relative">
       {/* Wallpaper and Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat h-screen"
-        style={{ backgroundImage: `url('/images/backgrounds/bg-img-${bgInteger}.jpeg')` }}
+        style={{ backgroundImage: `url('/images/backgrounds/bg-img.jpeg')` }}
       ></div>
-      <div className="absolute inset-0 bg-black/50 h-screen"></div>
+      <div className="absolute inset-0 bg-black/25 h-screen"></div>
 
       {/* Page Content */}
       <div className="relative font-bebas text-center">
