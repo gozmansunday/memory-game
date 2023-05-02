@@ -19,7 +19,7 @@ import traveller from "../../src/assets/images/cards/traveller.jpeg";
 import trull from "../../src/assets/images/cards/trull.jpeg";
 import whiskeyjack from "../../src/assets/images/cards/whiskeyjack.jpeg";
 
-export {
+const imageUrls = [
   anomander,
   caladan,
   coltaine,
@@ -39,5 +39,7 @@ export {
   tool,
   traveller,
   trull,
-  whiskeyjack,
-};
+  whiskeyjack
+];
+
+export default imageUrls;
