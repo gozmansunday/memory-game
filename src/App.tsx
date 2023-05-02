@@ -1,7 +1,11 @@
+import { useState } from "react";
+
 import Header from "./components/Header";
 import CardSection from "./components/CardSection";
 
 const App = () => {
+  const [clickedCard, setClickedCard] = useState<string[]>([]);
+
   return (
     <div className="relative">
       {/* Wallpaper and Overlay */}
@@ -17,7 +21,10 @@ const App = () => {
         <p className="mt-3 font-clash text-center text-sm sm:text-base md:text-xl font-semibold text-neutral-400">
           Choose cards to get points, but do not choose the same card twice.
         </p>
-        <CardSection />
+        <CardSection
+          clickedCard={clickedCard}
+          setClickedCard={setClickedCard}
+        />
       </div>
     </div>
   );
