@@ -4,27 +4,53 @@ import Card from "./Card";
 import imageUrls from "./images";
 
 interface Props {
-  clickedCard: string[];
-  setClickedCard: Dispatch<SetStateAction<string[]>>;
+  clickedCardArrayState: {
+    clickedCardArray: string[];
+    setclickedCardArray: Dispatch<SetStateAction<string[]>>;
+  };
+  scoreState: {
+    score: number;
+    setScore: Dispatch<SetStateAction<number>>;
+  };
+  highscoreState: {
+    highscore: number;
+    setHighscore: Dispatch<SetStateAction<number>>;
+  };
+  gameOnState: {
+    gameOn: boolean;
+    setGameOn: Dispatch<SetStateAction<boolean>>;
+  };
 }
 
-const CardSection = ({clickedCard, setClickedCard}: Props) => {
+const CardSection = ({ clickedCardArrayState, scoreState, highscoreState, gameOnState }: Props) => {
   const [imageUrlArray, setImageUrlArray] = useState<string[]>(imageUrls);
+
+  const [clickedCardArray, setclickedCardArray] = [clickedCardArrayState.clickedCardArray, clickedCardArrayState.setclickedCardArray];
+  const [score, setScore] = [scoreState.score, scoreState.setScore];
+  const [highscore, setHighscore] = [highscoreState.highscore, highscoreState.setHighscore];
+  const [gameOn, setGameOn] = [gameOnState.gameOn, gameOnState.setGameOn];
 
   const handleShuffleArray = () => {
     const array = [...imageUrlArray]
-
+    
     for (let i = 0; i < array.length; i++) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
     }
-
+    
     setImageUrlArray(array);
   };
 
-  const handleSaveClickedCard = (imageUrl: string) => {
-    setClickedCard([...clickedCard, imageUrl]);
-    console.log(clickedCard);
+  const handleSaveclickedCardArray = (imageUrl: string) => {
+    setclickedCardArray([...clickedCardArray, imageUrl]);
+  };
+
+  const handleCountScore = () => {
+    setScore(prevScore => prevScore + 1);
+  };
+
+  const handleCountHighscore = () => {
+    setHighscore(prevScore => prevScore + 1);
   };
 
   return (
@@ -33,8 +59,16 @@ const CardSection = ({clickedCard, setClickedCard}: Props) => {
         <div
           key={imageUrl}
           onClick={() => {
-            handleShuffleArray()
-            handleSaveClickedCard(imageUrl)
+            if (!clickedCardArray.includes(imageUrl) && gameOn) {
+              handleSaveclickedCardArray(imageUrl);
+              handleCountScore();
+              handleCountHighscore();
+              handleShuffleArray();
+              console.log("game on!")
+            } else {
+              setGameOn(false);
+              console.log("otilo!")
+            }
           }}
         >
           <Card url={imageUrl} /> 

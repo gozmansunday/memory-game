@@ -4,7 +4,15 @@ import Header from "./components/Header";
 import CardSection from "./components/CardSection";
 
 const App = () => {
-  const [clickedCard, setClickedCard] = useState<string[]>([]);
+  const [clickedCardArray, setclickedCardArray] = useState<string[]>([]);
+  const [score, setScore] = useState(0);
+  const [highscore, setHighscore] = useState(0);
+  const [gameOn, setGameOn] = useState(true);
+
+  const clickedCardArrayState = { clickedCardArray, setclickedCardArray };
+  const scoreState = { score, setScore };
+  const highscoreState = { highscore, setHighscore };
+  const gameOnState = { gameOn, setGameOn };
 
   return (
     <div className="relative">
@@ -17,13 +25,20 @@ const App = () => {
 
       {/* Page Content */}
       <div className="relative text-neutral-300">
-        <Header />
+        <Header
+          score={score}
+          highscore={highscore}
+        />
+
         <p className="mt-3 font-clash text-center text-sm sm:text-base md:text-xl font-semibold text-neutral-400">
           Choose cards to get points, but do not choose the same card twice.
         </p>
+
         <CardSection
-          clickedCard={clickedCard}
-          setClickedCard={setClickedCard}
+          clickedCardArrayState={clickedCardArrayState}
+          scoreState={scoreState}
+          highscoreState={highscoreState}
+          gameOnState={gameOnState}
         />
       </div>
     </div>
