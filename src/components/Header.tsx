@@ -5,7 +5,7 @@ interface Props {
 
 const Header = ({score, highscore}: Props) => {
   return (
-    <header className="font-bebas sticky top-0 z-50 backdrop-blur-md py-3 md:px-1 lg:px-0">
+    <header className="background-image bg-cover font-bebas sticky top-0 z-50 py-3 border-b border-neutral-400 md:px-1 lg:px-0">
       <div className="container mx-auto md:flex md:items-center md:justify-between">
         <h1 className="text-3xl text-center sm:text-4xl md:text-5xl">
             Memory Game

@@ -19,7 +19,6 @@ const App = () => {
     <div className="relative">
       {/* Wallpaper and Overlay */}
       <div className={`background-image absolute inset-0 bg-fixed bg-center ${!gameOn && "h-screen"}`}></div>
-      {/* <div className={`absolute inset-0 bg-black/30 ${!gameOn && "h-screen"}`}></div> */}
 
       {/* Page Content */}
       <div className="relative text-neutral-300">
