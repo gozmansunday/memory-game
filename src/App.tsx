@@ -22,7 +22,7 @@ const App = () => {
         className={`absolute inset-0 bg-cover bg-fixed bg-center bg-no-repeat ${!gameOn && "h-screen"}`}
         style={{ backgroundImage: `url('/images/backgrounds/bg-img.jpeg')` }}
       ></div>
-      <div className={`absolute inset-0 bg-black/50 ${!gameOn && "h-screen"}`}></div>
+      <div className={`absolute inset-0 bg-black/30 ${!gameOn && "h-screen"}`}></div>
 
       {/* Page Content */}
       <div className="relative text-neutral-300">

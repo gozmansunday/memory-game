@@ -66,6 +66,7 @@ const CardSection = ({ clickedCardArrayState, scoreState, highscoreState, gameOn
     <section className="flex flex-wrap justify-center gap-x-8 gap-y-12 max-w-[90rem] py-8 px-4 mx-auto sm:py-10 md:py-12">
       {imageUrlArray.map((imageUrl) => (
         <div
+          className="cursor-pointer transition hover:scale-110 hover:shadow-xl"
           key={imageUrl}
           onClick={() => {
             if (!clickedCardArray.includes(imageUrl) && gameOn) {
