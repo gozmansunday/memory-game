@@ -4,7 +4,7 @@ interface Props {
 
 const Card = ({url}: Props) => {
   return (
-    <div className="w-24 md:w-36 lg:w-44 border-neutral-400 border-2">
+    <div className="w-28 md:w-36 lg:w-44 border-neutral-400 border">
       <img src={url} alt={url} />
     </div>
   );
