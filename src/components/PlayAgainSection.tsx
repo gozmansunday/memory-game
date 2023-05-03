@@ -17,7 +17,7 @@ const PlayAgainSection = ({setGameOn, setScore}: Props) => {
           setGameOn(true);
           setScore(0);
         }}
-        className="border-2 py-2 px-8 hover:bg-neutral-300 hover:text-neutral-800 transition duration-300 xs:border-[3px] sm:text-xl md:text-3xl md:border-4 md:py-3 md:px-12"
+        className="border-2 border-neutral-300 py-2 px-8 hover:bg-neutral-300 hover:text-neutral-900 transition duration-300 xs:border-[3px] sm:text-xl md:text-3xl md:border-4 md:py-3 md:px-12"
       >
         Play Again
       </button>
