@@ -23,7 +23,16 @@ interface Props {
 }
 
 const CardSection = ({ clickedCardArrayState, scoreState, highscoreState, gameOnState }: Props) => {
-  const [imageUrlArray, setImageUrlArray] = useState<string[]>(imageUrls);
+  const shuffleArray = (array: string[]) => {
+    for (let i = 0; i < array.length; i++) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+
+    return array;
+  };
+
+  const [imageUrlArray, setImageUrlArray] = useState<string[]>(shuffleArray(imageUrls));
 
   const [clickedCardArray, setclickedCardArray] = [clickedCardArrayState.clickedCardArray, clickedCardArrayState.setclickedCardArray];
   const [score, setScore] = [scoreState.score, scoreState.setScore];
@@ -47,10 +56,10 @@ const CardSection = ({ clickedCardArrayState, scoreState, highscoreState, gameOn
 
   const handleCountScore = () => {
     setScore(prevScore => prevScore + 1);
-  };
 
-  const handleCountHighscore = () => {
-    setHighscore(prevScore => prevScore + 1);
+    if (score >= highscore) {
+      setHighscore(prevScore => prevScore + 1);
+    }
   };
 
   return (
@@ -62,12 +71,10 @@ const CardSection = ({ clickedCardArrayState, scoreState, highscoreState, gameOn
             if (!clickedCardArray.includes(imageUrl) && gameOn) {
               handleSaveclickedCardArray(imageUrl);
               handleCountScore();
-              handleCountHighscore();
               handleShuffleArray();
-              console.log("game on!")
             } else {
               setGameOn(false);
-              console.log("otilo!")
+              setclickedCardArray([]);
             }
           }}
         >
