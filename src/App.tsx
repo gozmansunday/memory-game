@@ -27,7 +27,7 @@ const App = () => {
           highscore={highscore}
         />
 
-        {gameOn && <p className="mt-3 px-2 font-clash text-center text-sm sm:text-base md:text-xl font-semibold text-neutral-400">
+        {gameOn && <p className="mt-6 px-2 font-clash text-center text-sm font-semibold text-neutral-800 sm:text-base md:text-xl">
           Choose cards to get points, but do not choose the same card twice.
         </p>}
 
